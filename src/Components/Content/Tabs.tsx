@@ -118,7 +118,7 @@ const Tab: FC<{ rids: any[]; FilterRides: any }> = (props) => {
       <div className="container ">
         <Row className="filters">
           <Dropdown overlay={menu} placement="bottomRight">
-            <Row style={{ alignItems: "center", gap: 5 }}>
+            <Row style={{ alignItems: "center", gap: 5, cursor: "pointer" }}>
               <AlignLeftOutlined></AlignLeftOutlined>
               <p style={{ marginBottom: 0 }}>Filters</p>
             </Row>
