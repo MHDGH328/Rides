@@ -32,6 +32,8 @@ const Home: NextPage = () => {
     }
   };
 
+  
+
   useEffect(() => {
     console.log(Set_Sorted_Rides);
   }, [Set_Sorted_Rides]);
