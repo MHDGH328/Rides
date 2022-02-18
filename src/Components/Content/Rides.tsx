@@ -25,18 +25,22 @@ const Rides: FC<{
       <Col xs={24} sm={24} md={15} lg={17} className="rides-content">
         <Row>
           <Col span={16}>
-            <p> Ride Id : {props.id} </p>
-            <p>Origin Station : {[props.origin_station_code]}</p>
-            <p>station_path: {"[" + props.station_path + "]"}</p>
+            <p style={{ whiteSpace: "nowrap" }}> Ride Id : {props.id} </p>
+            <p style={{ whiteSpace: "nowrap" }}>
+              Origin Station : {[props.origin_station_code]}
+            </p>
+            <p style={{ whiteSpace: "nowrap" }}>
+              station_path: {"[" + props.station_path + "]"}
+            </p>
 
-            <p>
+            <p style={{ whiteSpace: "nowrap" }}>
               Date:
               {props.date.toLocaleString("en-us", { day: "numeric" }) + "  "}
               {props.date.toLocaleString("en-us", { month: "long" }) + "  "}
               {props.date.toLocaleString("en-us", { year: "numeric" }) + "  "}
               {`${props.date.toLocaleTimeString("en-US", {})}`}
             </p>
-            <p>Distance:{props.dis}</p>
+            <p style={{ whiteSpace: "nowrap" }}>Distance:{props.dis}</p>
           </Col>
           <Col span={8}>
             <Row
