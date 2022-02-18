@@ -47,9 +47,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-  @media (max-width: 390px) {
+  @media (max-width: 395px) {
     .ant-tabs-tab + .ant-tabs-tab {
-      margin: 0 0 0 9px;
+      margin: 0 0 0 8px;
     }
   }
   .filters {
