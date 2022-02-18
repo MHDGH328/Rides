@@ -11,32 +11,38 @@ const Home: NextPage = () => {
       let sorted = sorted_rides();
       Set_Sorted_Rides(sorted);
     } else if (city !== "All City" && state === "All State") {
-      let sorted_city = Sorted_Rides.find((ele) => ele.City === city);
+      let sorted = sorted_rides();
+      let sorted_city = sorted.filter((ele) => ele.info.City === city);
+
       Set_Sorted_Rides(sorted_city);
     } else if (city === "All City" && state !== "All State") {
-      let sorted_state = Sorted_Rides.find((ele) => ele.state === state);
+      console.log("Mohammed", state);
+
+      let sorted = sorted_rides();
+      console.log(sorted);
+      let sorted_state = sorted.filter((ele) => ele.info.state === state);
+      console.log("Mohammed", sorted_state);
       Set_Sorted_Rides(sorted_state);
     } else if (city !== "All City" && state !== "All State") {
-      let sorted = Sorted_Rides.find(
-        (ele) => ele.state === state && ele.City === city
+      let sorted = sorted_rides();
+      let sorteds = sorted.filter(
+        (ele) => ele.info.state === state && ele.info.City === city
       );
-      Set_Sorted_Rides(sorted);
+      Set_Sorted_Rides(sorteds);
     }
   };
 
   useEffect(() => {
-    let sorted = sorted_rides();
-    Set_Sorted_Rides(sorted);
+    console.log(Set_Sorted_Rides);
   }, [Set_Sorted_Rides]);
 
-  return (
-    <Tabs
-      rids={Sorted_Rides}
-      city={City}
-      state={State}
-      FilterRides={FilterRides}
-    ></Tabs>
-  );
+  useEffect(() => {
+    let sorted = sorted_rides();
+    Set_Sorted_Rides(sorted);
+  }, []);
+
+  console.log("lllllllllll");
+  return <Tabs rids={Sorted_Rides} FilterRides={FilterRides}></Tabs>;
 };
 
 export default Home;

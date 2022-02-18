@@ -45,6 +45,8 @@ export let State:any[] = [] ;
 
 export let sorted_rides = () => {
   let Array_dimensional:any[] = [];
+  City = [];
+  State = [];
   Ride.map((ele)=> {
       let x =10000000000000000000000000000000000000000000;
          City.push(ele.City);

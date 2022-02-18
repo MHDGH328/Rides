@@ -1,14 +1,14 @@
 import { Button, Dropdown, Menu, Row, Select, Tabs } from "antd";
 import { FC, useEffect, useState } from "react";
 import { AlignLeftOutlined } from "@ant-design/icons";
-
+import { City, State } from "../../../rides";
 const { TabPane } = Tabs;
 import Rides from "./Rides";
-const Tab: FC<{ rids: any[]; city: any[]; state: any[]; FilterRides: any }> = (
-  props
-) => {
-  const [City, setCity] = useState<string>("All City");
-  const [State, setState] = useState<string>("All State");
+let first_time = 1;
+let s = 2;
+const Tab: FC<{ rids: any[]; FilterRides: any }> = (props) => {
+  const [city, setCity] = useState<string>("All City");
+  const [state, setState] = useState<string>("All State");
 
   let upComingRide: any[] = [];
   let pastRide: any[] = [];
@@ -22,7 +22,7 @@ const Tab: FC<{ rids: any[]; city: any[]; state: any[]; FilterRides: any }> = (
     setState(value);
   }
 
-  props.rids.map((ele: any) => {
+  props?.rids.map((ele: any) => {
     if (new Date(ele.info.date).getTime() > new Date().getTime()) {
       upComingRide.push(ele);
     }
@@ -30,10 +30,6 @@ const Tab: FC<{ rids: any[]; city: any[]; state: any[]; FilterRides: any }> = (
       pastRide.push(ele);
     }
   });
-
-  useEffect(() => {
-    props.FilterRides(State, City);
-  }, [City, State, props]);
 
   const menu = (
     <Menu>
@@ -58,7 +54,8 @@ const Tab: FC<{ rids: any[]; city: any[]; state: any[]; FilterRides: any }> = (
           onChange={handleChangeState}
         >
           <Option value="All State">All State</Option>
-          {props.state.map((ele) => {
+
+          {State.map((ele) => {
             return (
               <Option value={ele} key={ele}>
                 {ele}
@@ -74,7 +71,7 @@ const Tab: FC<{ rids: any[]; city: any[]; state: any[]; FilterRides: any }> = (
           onChange={handleChangeCity}
         >
           <Option value="All City">All City</Option>
-          {props.city.map((ele) => {
+          {City.map((ele) => {
             return (
               <Option value={ele} key={Math.random()}>
                 {ele}
@@ -86,6 +83,15 @@ const Tab: FC<{ rids: any[]; city: any[]; state: any[]; FilterRides: any }> = (
     </Menu>
   );
 
+  useEffect(() => {
+    if (first_time == 1) {
+    } else {
+      props.FilterRides(state, city);
+    }
+    first_time = 0;
+  }, [city, state]);
+
+  console.log(s);
   return (
     <div className="content">
       <div className="container ">
