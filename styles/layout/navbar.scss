@@ -1,0 +1,32 @@
+.navbar {
+  background-color: $backgroundColor;
+  width: "100%";
+  .content-navbar {
+    justify-content: space-between;
+    width: 100%;
+    padding: 15px 0px;
+    align-items: center;
+
+    .logo {
+      p {
+        font-weight: 800;
+        font-family: $mainFont;
+        color: white;
+        margin-bottom: 0px;
+        font-size: 25px;
+      }
+    }
+    .user {
+      align-items: center;
+      justify-content: flex-end;
+      gap: 15px;
+      p {
+        font-weight: 600;
+        font-family: $mainFont;
+        color: white;
+        margin-bottom: 0px;
+        font-size: 15px;
+      }
+    }
+  }
+}

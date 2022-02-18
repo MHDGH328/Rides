@@ -1,0 +1,110 @@
+.content {
+  background-color: $secondBackGroundColor;
+  width: 100%;
+  min-height: calc(100vh - 75px);
+  .content-tabes {
+    width: 100%;
+  }
+
+  .ant-tabs-nav-wrap {
+    content: "";
+    border-bottom: 0px solid !important;
+  }
+  .ant-tabs-top > .ant-tabs-nav::before {
+    z-index: -1 !important;
+  }
+  .ant-tabs-tab-btn {
+    text-shadow: 0 0 0.25px currentcolor;
+    color: #d0cbcb;
+    font-family: "Inter";
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 0.17;
+  }
+  .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+    text-shadow: 0 0 0.25px currentcolor;
+    color: white;
+    font-family: "Inter";
+    font-size: 15px;
+    font-weight: 200;
+    line-height: 0.17;
+  }
+  .ant-tabs-nav-wrap {
+    margin-top: 5px;
+  }
+
+  .anticon {
+    display: inline-block;
+    color: inherit;
+    font-style: normal;
+
+    line-height: 0;
+    text-align: center;
+
+    text-transform: none;
+    vertical-align: -0.125em;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @media (max-width: 390px) {
+    .ant-tabs-tab + .ant-tabs-tab {
+      margin: 0 0 0 9px;
+    }
+  }
+  .filters {
+    row-gap: 0px;
+    position: relative;
+
+    font-size: 20px;
+    color: white;
+
+    font-family: "Inter";
+    padding-top: 20px;
+    flex-direction: row-reverse;
+  }
+
+  .ant-dropdown.ant-dropdown-placement-bottomRight.ant-dropdown-hidden {
+    min-width: 153px !important;
+    left: 108px !important;
+    border-radius: 10px !important;
+    top: -873px !important;
+    background-color: black !important;
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    -ms-border-radius: 10px !important;
+    -o-border-radius: 10px !important;
+    box-shadow: none !important;
+  }
+
+  .ant-dropdown.ant-dropdown-placement-bottomRight {
+    background-color: black;
+    box-shadow: none !important;
+  }
+  .ant-dropdown-menu.ant-dropdown-menu-root.ant-dropdown-menu-vertical.ant-dropdown-menu-light,
+  .ant-dropdown .ant-dropdown-placement-bottomRight,
+  .ant-dropdown-menu {
+    background-color: black !important;
+    padding: 10px !important;
+    color: white !important;
+    border-radius: 8px !important;
+    min-width: 166px !important;
+    -webkit-border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+    -ms-border-radius: 8px !important;
+    -o-border-radius: 8px !important;
+    box-shadow: none !important;
+  }
+  ul {
+    background-color: black !important;
+    padding: 10px !important;
+    color: white !important;
+    border-radius: 8px !important;
+    min-width: 166px !important;
+    -webkit-border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+    -ms-border-radius: 8px !important;
+    -o-border-radius: 8px !important;
+    box-shadow: none !important;
+  }
+}

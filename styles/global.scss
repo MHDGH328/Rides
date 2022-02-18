@@ -1,0 +1,78 @@
+@import "./abstruct/variable.scss";
+@import "./layout/navbar.scss";
+@import "./home/style.scss";
+@import "./home/rides.scss";
+@media (max-width: 767px) {
+  .container {
+    width: 95%;
+    padding: 0px;
+    margin: auto;
+  }
+}
+
+@media (min-width: 767px) {
+  .container {
+    width: 750px;
+    padding: 0;
+    margin: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+    padding: 0;
+    margin: auto;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+    padding: 0;
+    margin: auto;
+  }
+}
+.ant-select-dropdown.ant-select-dropdown-placement-bottomLeft {
+  background-color: $secondBackGroundColor !important;
+  color: white;
+}
+.ant-select-item-option-content {
+  color: #a5a5a5;
+}
+.ant-dropdown-menu {
+  background-color: $thirdBackgroundColor !important;
+  width: 200px;
+  padding: 15px 20px;
+  color: white;
+  font-family: $mainFont;
+  border-radius: 5px !important;
+  -webkit-border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  -ms-border-radius: 5px !important;
+  -o-border-radius: 5px !important;
+  box-shadow: none;
+}
+.ant-select-arrow {
+  color: #a5a5a5 !important;
+}
+.ant-select.ant-select-single.ant-select-show-arrow.ant-select-open,
+.ant-select.ant-select-single.ant-select-show-arrow {
+  width: 100% !important;
+}
+.ant-select-selector {
+  background-color: $secondBackGroundColor !important;
+  border: none !important;
+  border-radius: 5px !important;
+  -webkit-border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  -ms-border-radius: 5px !important;
+  -o-border-radius: 5px !important;
+}
+.ant-select-selection-item {
+  color: #a5a5a5;
+}
+.ant-select-item.ant-select-item-option.ant-select-item-option-active,
+.ant-select-item.ant-select-item-option.ant-select-item-option-selected {
+  background-color: $secondBackGroundColor;
+}
