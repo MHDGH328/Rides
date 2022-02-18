@@ -17,7 +17,7 @@ export let Ride = [
         date:1645021330000,
         map_url:'url',
         state:'Daraa',
-        City:'Hrak'
+        City:'Bosraa'
     },
     {
         id:'003',
@@ -27,7 +27,7 @@ export let Ride = [
         date:1645712530000,
         map_url:'url',
         state:'Aleppo',
-        City:'Aleppo'
+        City:'Midan'
     }
 
 ];
