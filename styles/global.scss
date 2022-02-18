@@ -1,6 +1,6 @@
 @import "./abstruct/variable.scss";
 @import "./layout/navbar.scss";
-@import "./home/style.scss";
+@import "./home/tabs.scss";
 @import "./home/rides.scss";
 @media (max-width: 767px) {
   .container {
@@ -75,4 +75,7 @@
 .ant-select-item.ant-select-item-option.ant-select-item-option-active,
 .ant-select-item.ant-select-item-option.ant-select-item-option-selected {
   background-color: $secondBackGroundColor;
+}
+.ant-tabs-tab-btn {
+  font-family: $mainFont;
 }

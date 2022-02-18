@@ -7,7 +7,7 @@ export let Ride = [
         date:1644934930000,
         map_url:'url',
         state:'Damascus',
-        City:'mazzuh'
+        City:'mazzah'
     },
     {
         id:'002',

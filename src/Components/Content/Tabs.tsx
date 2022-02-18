@@ -1,7 +1,7 @@
 import { Button, Dropdown, Menu, Row, Select, Tabs } from "antd";
 import { FC, useEffect, useState } from "react";
 import { AlignLeftOutlined } from "@ant-design/icons";
-import { City, State } from "../../../rides";
+import { State, Ride } from "../../../rides";
 const { TabPane } = Tabs;
 import Rides from "./Rides";
 let first_time = 1;
@@ -9,6 +9,7 @@ let s = 2;
 const Tab: FC<{ rids: any[]; FilterRides: any }> = (props) => {
   const [city, setCity] = useState<string>("All City");
   const [state, setState] = useState<string>("All State");
+  const [array_city, set_array_city] = useState<any[]>([]);
 
   let upComingRide: any[] = [];
   let pastRide: any[] = [];
@@ -19,6 +20,20 @@ const Tab: FC<{ rids: any[]; FilterRides: any }> = (props) => {
     setCity(value);
   }
   function handleChangeState(value: any) {
+    if (value !== "All State") {
+      let city: any[] = [];
+      let x = Ride.filter((ele) => ele.state === value);
+
+      x.map((ele) => {
+        city.push(ele.City);
+      });
+      set_array_city(city);
+    }
+    if (value === "All State") {
+      let city: any[] = [];
+      Ride.map((ele) => city.push(ele.City));
+      set_array_city(city);
+    }
     setState(value);
   }
 
@@ -71,7 +86,7 @@ const Tab: FC<{ rids: any[]; FilterRides: any }> = (props) => {
           onChange={handleChangeCity}
         >
           <Option value="All City">All City</Option>
-          {City.map((ele) => {
+          {array_city.map((ele) => {
             return (
               <Option value={ele} key={Math.random()}>
                 {ele}
@@ -82,6 +97,12 @@ const Tab: FC<{ rids: any[]; FilterRides: any }> = (props) => {
       </Row>
     </Menu>
   );
+
+  useEffect(() => {
+    let city: any[] = [];
+    Ride.map((ele) => city.push(ele.City));
+    set_array_city(city);
+  }, []);
 
   useEffect(() => {
     if (first_time == 1) {
@@ -98,8 +119,8 @@ const Tab: FC<{ rids: any[]; FilterRides: any }> = (props) => {
         <Row className="filters">
           <Dropdown overlay={menu} placement="bottomRight">
             <Row style={{ alignItems: "center", gap: 5 }}>
-              <p style={{ marginBottom: 0 }}>Filters</p>
               <AlignLeftOutlined></AlignLeftOutlined>
+              <p style={{ marginBottom: 0 }}>Filters</p>
             </Row>
           </Dropdown>
         </Row>
